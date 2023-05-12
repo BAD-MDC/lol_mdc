@@ -1,4 +1,9 @@
-# LOLMDC
+# [LoL_MDC][lolmdclink]
+[lolmdclink]: https://bad-mdc.github.io/lol_mdc/
+위 링크를 통해 LOL_MDC 로 접속할 수 있습니다.
+
+[![pages-build-deployment](https://github.com/BAD-MDC/lol_mdc/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/BAD-MDC/lol_mdc/actions/workflows/pages/pages-build-deployment)
+
 
 ## GOAL
 
