@@ -15,7 +15,7 @@ def latest_version() :
 
 #챔피언 JSON 파일 반환
 def champions() :
-     champion_data_url = "http://ddragon.leagueoflegends.com/cdn/" + latest_version() + "/data/en_US/champion.json"
+     champion_data_url = "http://ddragon.leagueoflegends.com/cdn/" + latest_version() + "/data/ko_KR/champion.json"
      champion_data = requests.get(champion_data_url).json()
      return champion_data
 
@@ -23,3 +23,10 @@ def champions() :
 #챔피언 이름에 따른 결과값 반환
 
 #챔피언 레벨 입력값에 따라 정보 반환
+
+#챔피언 목록 반환
+def champion_name(champion_kor_name) :
+     for champion in champions()["data"] :
+          if champions()["data"][champion]["name"] == champion_kor_name :
+               return(champions()["data"][champion])
+     return "ERROR"     

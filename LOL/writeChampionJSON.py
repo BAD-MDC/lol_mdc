@@ -6,7 +6,7 @@ from lolData import champions
 def writeChampionJSON() :
 
     with open('LOL/champion.json', 'w') as convert_file:
-        json.dump(champions(), convert_file)
+        json.dump(champions(), convert_file, ensure_ascii = False)
 
 
 writeChampionJSON()
