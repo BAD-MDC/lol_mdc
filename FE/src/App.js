@@ -1,32 +1,31 @@
 import './App.css';
 import {useState} from 'react';
 
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: #e9ecef;
+  }
+`;
+
 function Header(){
   return <header>
     <h1 ><a href="/">LOL_MDC</a></h1>
   </header>
 }
 
-/*function Article(){
-  return <article></article>
-}*/
-
 function Article1(){
   return <article>
     <h2>Welcome to LOL_MDC</h2>
-      LOL_MDC has 3 Component, Expected Team Winning Rate, Expected Of Line Match, and Comparison Within Tier.
+      LOL_MDC has 4 Component, Expected Team Winning Rate, Expected Of Line Match, Comparison Within Tier and Analysis Skill Damage.
   </article>
 }
 
 function Article2(){
   return <article>
     This Page is made by BAD-MDC, People who leave the Air Force training camp for health problems and find a New Way.
-  </article>
-}
-
-function Article3(){
-  return <article>
-    임재성 학과장님 나빠요
   </article>
 }
 
@@ -74,8 +73,53 @@ function Create3(){
   </article>
 }
 
+function Create4(){
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+  const handleReset = () => {
+    setInputValue('');
+  };
+  const handleSum = () => {
+    alert('미구현')
+    //inputValue 받아서 계산하는 Code 작성예정
+  }
+
+  const handleClick1 = () => {
+    setInputValue(inputValue + 'Q');
+  };
+  const handleClick2 = () => {
+    setInputValue(inputValue + 'W');
+  };
+  const handleClick3 = () => {
+    setInputValue(inputValue + 'E');
+  };
+  const handleClick4 = () => {
+    setInputValue(inputValue + 'R');
+  };
+  const handleClick5 = () => {
+    setInputValue(inputValue + '평');
+  };
+
+  return <article>
+    <h2>Skill</h2>
+    <div>
+      <p><input type = 'text' value = {inputValue} onChange={handleInputChange} /></p>
+      <button onClick={handleClick1}>Q</button>
+      <button onClick={handleClick2}>W</button>
+      <button onClick={handleClick3}>E</button>
+      <button onClick={handleClick4}>R</button>
+      <button onClick={handleClick5}>평타</button>
+      <p><button onClick={handleReset}>Reset</button></p>
+      <p><button onClick={handleSum}>Analysis</button></p>
+    </div>
+  </article>
+}
+
 function App() {
-  const [mode, setMode] = useState('d');
+  const [mode, setMode] = useState('e');
 
   let content = null;
 
@@ -88,14 +132,18 @@ function App() {
   else if(mode === 'CREATE3'){
     content = <Create3></Create3>
   }
+  else if (mode === 'CREATE4'){
+    content = <Create4></Create4>
+  }
 
   return (
     <div>
+      <GlobalStyle/>
       <Header></Header>
       <Article1></Article1>
       <Article2></Article2>
-      <Article3></Article3>
       <Nav></Nav>
+      
       {content}
       <p><a href="/1. Expected Team Winning Rate" onClick={event=>{
         event.preventDefault();
@@ -109,6 +157,10 @@ function App() {
         event.preventDefault();
         setMode('CREATE3');
       }}>Comparison Within Tier</a></p>
+      <p><a href="/4. Skill" onClick={event=>{
+        event.preventDefault();
+        setMode('CREATE4');
+      }}>Skill</a></p>
       
     </div>
   );
