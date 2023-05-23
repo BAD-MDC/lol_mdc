@@ -32,10 +32,10 @@ def champion(champion_kor_name) :
 
 #챔피언 레벨 입력값에 따라 정보 반환
 #파라미터 : 챔피언 한국 이름 , 레벨
-#Return : [ HP, MP, ARMOR, SPELLBLOCK ] <- 입력된 레벨에 해당하는 값 Return
+#Return : [ HP, MP, ARMOR, SPELLBLOCK , ATTACKDMG, ATTACKSPEED ] <- 입력된 레벨에 해당하는 값 Return
 def champion_by_level(champion_kor_name, level) :
      champion_name = champion_eng_name(champion_kor_name)
-     champion_info = champion(champion_name)
+     champion_info = champion(champion_kor_name)
      hp = champion_info["data"][champion_name]["stats"]["hp"]
      hpperlevel = champion_info["data"][champion_name]["stats"]["hpperlevel"]
      mp = champion_info["data"][champion_name]["stats"]["mp"]
@@ -44,9 +44,14 @@ def champion_by_level(champion_kor_name, level) :
      armorperlevel = champion_info["data"][champion_name]["stats"]["armorperlevel"]
      spellblock = champion_info["data"][champion_name]["stats"]["spellblock"]
      spellblockperlevel = champion_info["data"][champion_name]["stats"]["spellblockperlevel"]
+     attackdamage = champion_info["data"][champion_name]["stats"]["attackdamage"]
+     attackdamageperlevel = champion_info["data"][champion_name]["stats"]["attackdamageperlevel"]
+     attackspeed = champion_info["data"][champion_name]["stats"]["attackspeed"]
+     attackspeedperlevel = champion_info["data"][champion_name]["stats"]["attackspeedperlevel"]
 
      return [hp + hpperlevel * (level - 1), mp + mpperlevel * (level - 1), 
-             armor + armorperlevel * (level - 1), spellblock + spellblockperlevel * (level - 1)]
+             armor + armorperlevel * (level - 1), spellblock + spellblockperlevel * (level - 1),
+             attackdamage + attackdamageperlevel * (level - 1), attackspeed * (1 + 0.01 * attackspeedperlevel * (level - 1))]
 
 #챔피언 목록 반환
 #파라미터 : 챔피언 한국 이름
