@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-q+c1q39cz!%0y(k0=7e!mrct7i)e4#r4r*%(o%u=lx^0@fyhjm
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -62,9 +62,10 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000'
+    'http://localhost:3000',
+'http://127.0.0.1:3000',
 ]
-
+CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = "djangoreactapi.urls"
 
 TEMPLATES = [

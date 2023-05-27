@@ -1,11 +1,7 @@
 from rest_framework import serializers
-from .models import Post
+from .models import Review
 
-class PostSerializer(serializers.ModelSerializer):
+class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
-        fields = (
-            'id',
-            'title',
-            'content',
-        )
-        model = Post
+        fields = ('id','title','content','updated_at')
+        model = Review
