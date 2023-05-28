@@ -13,15 +13,12 @@ def latest_version() :
      latest_version = str(version_data[0])
      return latest_version
 
-#챔피언 JSON 파일 반환
 #Return : 모든 챔피언 관련 json file
 def champions() :
      champions_data_url = "http://ddragon.leagueoflegends.com/cdn/" + latest_version() + "/data/ko_KR/champion.json"
      champions_data = requests.get(champions_data_url).json()
      return champions_data
 
-
-#챔피언 이름에 따른 결과값 반환
 #파라미터 : 챔피언 한국 이름
 #Return : 특정 챔피언 관련 json file
 def champion(champion_kor_name) :
@@ -30,7 +27,6 @@ def champion(champion_kor_name) :
      champion_data = requests.get(champion_data_url).json()
      return champion_data
 
-#챔피언 레벨 입력값에 따라 정보 반환
 #파라미터 : 챔피언 한국 이름 , 레벨
 #Return : [ HP, MP, ARMOR, SPELLBLOCK , ATTACKDMG, ATTACKSPEED ] <- 입력된 레벨에 해당하는 값 Return
 def champion_by_level(champion_kor_name, level) :
@@ -53,7 +49,6 @@ def champion_by_level(champion_kor_name, level) :
              armor + armorperlevel * (level - 1), spellblock + spellblockperlevel * (level - 1),
              attackdamage + attackdamageperlevel * (level - 1), attackspeed * (1 + 0.01 * attackspeedperlevel * (level - 1))]
 
-#챔피언 목록 반환
 #파라미터 : 챔피언 한국 이름
 #Return : 챔피언 영어 이름(str) , 한국 이름이 잘못된 경우 "ERROR"
 def champion_eng_name(champion_kor_name) :
@@ -61,3 +56,9 @@ def champion_eng_name(champion_kor_name) :
           if champions()["data"][champion]["name"] == champion_kor_name :
                return(champions()["data"][champion]["id"])
      return "ERROR"
+
+#Return : 아이템 리스트
+def items() :
+     items_data_url = "http://ddragon.leagueoflegends.com/cdn/" + latest_version() + "/data/ko_KR/item.json"
+     items_data = requests.get(items_data_url).json()
+     return items_data
