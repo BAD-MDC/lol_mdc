@@ -44,6 +44,7 @@ def champion_by_level(champion_kor_name, level) :
      attackdamageperlevel = champion_info["data"][champion_name]["stats"]["attackdamageperlevel"]
      attackspeed = champion_info["data"][champion_name]["stats"]["attackspeed"]
      attackspeedperlevel = champion_info["data"][champion_name]["stats"]["attackspeedperlevel"]
+     print(champion_info["data"][champion_name])
 
      return [hp + hpperlevel * (level - 1), mp + mpperlevel * (level - 1), 
              armor + armorperlevel * (level - 1), spellblock + spellblockperlevel * (level - 1),
@@ -62,3 +63,6 @@ def items() :
      items_data_url = "http://ddragon.leagueoflegends.com/cdn/" + latest_version() + "/data/ko_KR/item.json"
      items_data = requests.get(items_data_url).json()
      return items_data
+
+
+print(champion_by_level("아트록스",1))
