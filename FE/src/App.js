@@ -107,7 +107,7 @@ function Create4(){
     <h2>Skill</h2>
     <div>
       <p>Select Your Champion and its State</p>
-      <img src="./img/Akali.png" alt= "챔피언1 사진 들어갈 자리"/>
+      <img src={`${process.env.PUBLIC_URL}/img/Akali.png`} alt=""/>
       <p><input type = 'text' value = {inputValue} onChange={handleInputChange} /></p>
       <button onClick={handleClick1}>Q</button>
       <button onClick={handleClick2}>W</button>
@@ -116,7 +116,7 @@ function Create4(){
       <button onClick={handleClick5}>평타</button>
       <p>Verse.</p>
       <p>Select Your Opposite Champion and its State</p>
-      <img src="./img/Akali.png" alt= "챔피언2 사진 들어갈 자리"/>
+      <img src={`${process.env.PUBLIC_URL}/img/Akali.png`} alt=""/>
       <p><button onClick={handleReset}>Reset</button></p>
       <p><button onClick={handleSum}>Analysis</button></p>
     </div>
