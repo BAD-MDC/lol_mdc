@@ -4,6 +4,10 @@ import {useState} from 'react';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import ItemSearch from './ItemSearch';
+
 const GlobalStyle = createGlobalStyle`
   body {
     background: #e9ecef;
@@ -104,7 +108,7 @@ function Create4(){
   };
 
   return <article>
-    <h2>Skill</h2>
+    <h1>Skill</h1>
     <div>
       <p>Select Your Champion and its State</p>
       <img src={`${process.env.PUBLIC_URL}/img/Akali.png`} alt=""/>
@@ -114,9 +118,11 @@ function Create4(){
       <button onClick={handleClick3}>E</button>
       <button onClick={handleClick4}>R</button>
       <button onClick={handleClick5}>평타</button>
+      <h2>Item Search</h2>
+      <ItemSearch />
       <p>Verse.</p>
       <p>Select Your Opposite Champion and its State</p>
-      <img src={`${process.env.PUBLIC_URL}/img/Akali.png`} alt=""/>
+      <img src={`${process.env.PUBLIC_URL}/img/Aatrox.png`} alt=""/>
       <p><button onClick={handleReset}>Reset</button></p>
       <p><button onClick={handleSum}>Analysis</button></p>
     </div>
