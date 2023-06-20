@@ -11,6 +11,8 @@ Riot Games API를 이용하여 League of Legends 관련 데이터를 수집하�
 
 ## DETAILS
 
+### Special Thanks to : [lolstaticdata](https://github.com/meraki-analytics/lolstaticdata)
+
 1. 특정 콤보에 대한 실제 데미지 ( 방어력, 마법 저항력, 스킬 계수 등 종합적 고려 ) 계산 시뮬레이터
 2. 5v5 상황에서, 각 챔피언들의 데이터를 통해 5개의 챔피언 조합 시 기대 승률, 및 상대 팀의 챔피언과의 상대 승률 등을 조합하여 각 팀의 기대 승률 제공
 (플레이어의 챔피언 숙련도 및 챔피언 승률 등도 고려할 예정)

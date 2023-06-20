@@ -1,3 +1,0 @@
-# LOL_MDC Riot API
-
-API = "RGAPI-9082a7cd-a7bf-4446-90bd-1a524525af74"
